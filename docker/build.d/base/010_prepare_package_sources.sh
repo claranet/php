@@ -16,10 +16,4 @@ DIST=`lsb_release --codename --short`
 curl --silent --show-error -L http://nginx.org/keys/nginx_signing.key -o - | apt-key add - &>> $BUILD_LOG
 echo "deb http://nginx.org/packages/debian/ $DIST nginx" >> /etc/apt/sources.list.d/nginx.list
 
-# NodeJS
-if is_true "$ENABLE_NODEJS"; then
-    sectionText "Enable upstream nodejs debian repository"
-    eatmydata curl -sL https://deb.nodesource.com/setup_${NODEJS_VERSION}.x | eatmydata bash - &>> $BUILD_LOG
-fi
-
 update_apt_cache --force

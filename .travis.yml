@@ -2,10 +2,15 @@
 #   - Build all PRs, master push and tags
 #   - master push will be published on docker hub with `master` floating tag
 #   - tags are released with `tag` and `latest` floating tag
+dist: trusty
 sudo: false
-language: bash
+language: generic
 services:
   - docker
+
+git:
+  depth: 1
+  submodules: false
 
 env:
   global:
@@ -17,23 +22,22 @@ env:
     - DOCKER_IMAGE_FROM_TAG="7.1.16-fpm-jessie"
 
 stages:
-  - name: build
-    if: type = pull_request
-  - name: publish
-    if: branch = master
-  - name: release
-    if: tag =~ ^\d+\.\d+\.\d+$
+  - test
+  - publish
+
+before_script:
+  - sudo apt update
+  - sudo apt install -y realpath gettext
 
 jobs:
   include:
-    - stage: build
+    - stage: test
+      if: type = pull_request
       script:
         - ./bin/image.sh build
         - ./bin/image.sh test
     - stage: publish
-      script:
-        - ./bin/image.sh publish
-    - stage: release
+      if: tag =~ ^\d+\.\d+\.\d+$
       script:
         - ./bin/image.sh release
 

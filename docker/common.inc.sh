@@ -124,10 +124,11 @@ install_packages() {
   # FIX for debian jessie
   DIST=`lsb_release --codename --short`
   if [ "$DIST" = "jessie" ]; then
+    sectionText "Found jessie distribution, map package names"
     for r in $JESSIE_PACKAGE_MAP; do
       local from=`echo "$r" | cut -d: -f1`
       local to=`echo "$r" | cut -d: -f2`
-      SYSTEM_PACKAGES=`echo "$SYSTEM_PACKAGES" | sed "s/$from/$to/g"`
+      pkg_list=`echo "$pkg_list" | sed "s/$from/$to/g"`
     done
   fi
 
