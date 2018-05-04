@@ -1,0 +1,3 @@
+#!/bin/sh
+
+SECTION_DESCRIPTION="Starts busybox crond"

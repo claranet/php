@@ -1,0 +1,1 @@
+SECTION_DESCRIPTION="Is meant to initialize a freshly installed environment (e.g. db import)"

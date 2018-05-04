@@ -1,0 +1,1 @@
+SECTION_DESCRIPTION="Meant to launch the post deployment tasks (e.g. disable maintenance mode)"

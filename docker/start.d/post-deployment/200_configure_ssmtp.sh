@@ -1,0 +1,1 @@
+../../shared_steps/configure_ssmtp.sh

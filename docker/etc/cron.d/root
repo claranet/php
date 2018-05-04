@@ -1,0 +1,5 @@
+# This file will be copied to /var/spool/cron/crontabs/root
+# put your cron tasks in here
+
+# m h   dom mon dow  command
+# * *   *   *   *    mytask

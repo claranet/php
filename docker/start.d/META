@@ -1,0 +1,5 @@
+#!/bin/sh
+
+SECTION_DESCRIPTION="Available subsections to launch the container"
+CATCH_ALL_EXECUTION="false"
+

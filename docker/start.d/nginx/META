@@ -1,0 +1,1 @@
+SECTION_DESCRIPTION="Starts nginx in foreground, logging to stdout/stderr"

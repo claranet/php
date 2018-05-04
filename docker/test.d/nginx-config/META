@@ -1,0 +1,1 @@
+SECTION_DESCRIPTION="Runs nginx -t for every sites-available/*.conf file, one after another"
