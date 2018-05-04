@@ -21,7 +21,7 @@ build_image() {
 }
 
 dockerhub_login() {
-    echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+    echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USER" --password-stdin
 }
 
 dockerhub_push() {
@@ -42,16 +42,10 @@ case "$1" in
     build)
         build_image ${IMAGE}
         ;;
-    build-nobase)
-        build_image "${IMAGE}-nobase" --build-arg "RUN_BUILD_BASE=false"
-        ;;
     test)
         test_image ${IMAGE}
         ;;
     publish)
-        dockerhub_push
-        ;;
-    release)
         dockerhub_push
 
         # push latest tag
@@ -62,6 +56,6 @@ case "$1" in
         docker push ${IMAGE_NAME}:latest-nobase
         ;;
     *)
-        echo "\nUsage $0 <build|build-nobase|test|publish|release>\n"
+        echo "\nUsage $0 <build|test|publish>\n"
 esac
 

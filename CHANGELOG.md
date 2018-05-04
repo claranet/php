@@ -1,6 +1,11 @@
 
 
-# 1.0.0
+# 1.0.1 (2018-05-04)
+
+* fix travis ci
+
+
+# 1.0.0 (2018-05-04)
 
 https://github.com/claranet/spryker-base will be considered to be the previous version of 1.0.0!
 
