@@ -1,7 +1,5 @@
-# Rationale:
-#   - Build all PRs, master push and tags
-#   - master push will be published on docker hub with `master` floating tag
-#   - tags are released with `tag` and `latest` floating tag
+---
+
 dist: trusty
 sudo: false
 language: generic
@@ -12,33 +10,13 @@ git:
   depth: 1
   submodules: false
 
-env:
-  global:
-    - PROJECT_VERSION=1.0.0
-    - IMAGE_NAME="claranet/php"
-    - IMAGE_TAG="$TRAVIS_BRANCH"
-  matrix:
-    - DOCKER_IMAGE_FROM_TAG="7.2.5-fpm-stretch"
-    - DOCKER_IMAGE_FROM_TAG="7.1.16-fpm-jessie"
-
 stages:
   - test
   - publish
 
-before_script:
-  - sudo apt update
+script:
+  - sudo apt update || true # allow partial updates as well
   - sudo apt install -y realpath gettext
-
-jobs:
-  include:
-    - stage: test
-      if: type = pull_request
-      script:
-        - ./bin/image.sh build
-        - ./bin/image.sh test
-    - stage: publish
-      if: tag =~ ^\d+\.\d+\.\d+$
-      script:
-        - ./bin/image.sh release
+  - ./bin/ci.sh run
 
 

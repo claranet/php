@@ -1,5 +1,11 @@
 
 
+# 1.0.2 (2018-05-08)
+
+* fix error message BG color for build steps using `errorText`
+* fix CI matrix and stages by introducing a special `bin/ci.sh` script
+
+
 # 1.0.1 (2018-05-04)
 
 * fix travis ci
