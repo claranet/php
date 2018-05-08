@@ -15,7 +15,7 @@ LATEST_IMAGE="7.2.5-fpm-stretch"
 #  * build/test/publish with master tag if this is a push to master
 run_ci() {
     # Pull requests
-    if [ "$TRAVIS_PULL_REQUEST" != "false" ]; then
+    if [ ! -z "$TRAVIS_PULL_REQUEST" ] && [ "$TRAVIS_PULL_REQUEST" != "false" ]; then
         printf "\nPull Request\n"
         stage_pr
         return $?
@@ -29,7 +29,7 @@ run_ci() {
     fi
 
     # Tags
-    if [ "$TRAVIS_TAG" =~ ^\([0-9]+\.[0-9]+\.[0-9]+\)$ ]; then
+    if echo "$TRAVIS_TAG" | egrep '^([0-9]+\.[0-9]+\.[0-9]+)$' &> /dev/null; then
         printf "\nTag Release\n"
         stage_release
         return $?

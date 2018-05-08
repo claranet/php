@@ -1,4 +1,9 @@
 
+# 1.0.4 (2018-05-08)
+
+* fix travis ci release step bash script
+* adds bump2version
+
 # 1.0.3 (2018-05-08)
 
 * just introduced to trigger CI again
