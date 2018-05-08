@@ -1,13 +1,14 @@
 
-FROM php:${DOCKER_IMAGE_FROM_TAG}
+FROM ${FROM_IMAGE}
 
 # see http://label-schema.org/rc1/
 LABEL org.label-schema.name="php" \
       org.label-schema.version="0.1" \
       org.label-schema.description="Core PHP image" \
       org.label-schema.vendor="Claranet GmbH" \
-      org.label-schema.schema-version="1.0.0" \
-      author1="Tony Fahrion <tony.fahrion@de.clara.net>"
+      org.label-schema.schema-version="1.0.2" \
+      author1="Fabian Dörk <fabian.doerk@de.clara.net>" \
+      author2="Tony Fahrion <tony.fahrion@de.clara.net>"
 
 
 # GENERAL

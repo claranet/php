@@ -5,17 +5,17 @@ export TERM=xterm
 #get amount of available prozessors * 2 for faster compiling of sources
 COMPILE_JOBS=$((`getconf _NPROCESSORS_ONLN`*2))
 
-ERROR_BKG=';41m' # background red
-GREEN_BKG=';42m' # background green
+ERROR_BKG='\e[41m' # background red
+GREEN_BKG='\e[42m' # background green
 BLUE_BKG='\e[44m' # background blue
 YELLOW_BKG='\e[43m' # background yellow
 MAGENTA_BKG='\e[45m' # background magenta
 
 INFO_TEXT='\033[33' # yellow text
-WHITE_TEXT='\e[97m' # text white
+WHITE_TEXT='\033[97m' # text white
 BLACK_TEXT='\033[30' # text black
 RED_TEXT='\033[31' # text red
-MAGENTA_TEXT='\e[35m'
+MAGENTA_TEXT='\033[35m'
 NC='\033[0m' # reset
 
 # this is a state file
