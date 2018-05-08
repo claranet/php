@@ -30,7 +30,7 @@ ENV ENABLE_GCP="${ENABLE_GCP:-0}" \
 # busybox-static: provides crond, the normal package does not!
 # ssmtp: synchronouse mailer, very handy in CLI scripts on docker
 ENV PATH="${PATH}:${WORKDIR}/docker/bin" \
-    BUILD_PACKAGES="ccache build-essential nodejs unzip" \
+    BUILD_PACKAGES="ccache build-essential unzip" \
     SYSTEM_PACKAGES="ssmtp busybox-static netcat vim less tree libtcmalloc-minimal4 git postgresql-client gettext nginx" \
     JESSIE_PACKAGE_MAP="libpng16-16:libpng12-0 libicu57:libicu52 libmagickwand-6.q16-3:libmagickwand-6.q16-2 libmagickcore-6.q16-3:libmagickcore-6.q16-2" \
     ENABLE_NEWRELIC="false"
