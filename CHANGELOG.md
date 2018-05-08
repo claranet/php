@@ -1,4 +1,8 @@
 
+# 1.0.5 (2018-05-08)
+
+* fix missing `npm` in PATH ( github issue #5 )
+
 # 1.0.4 (2018-05-08)
 
 * fix travis ci release step bash script
