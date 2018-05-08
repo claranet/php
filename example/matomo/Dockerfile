@@ -1,4 +1,4 @@
-FROM local/claranet/php:1.0.2-php7.2.5
+FROM local/claranet/php:1.0.3-php7.2.5
 
 ENV DOCUMENT_ROOT="${WORKDIR}" \
     COMPRESS_FILE_PATHS="js" \

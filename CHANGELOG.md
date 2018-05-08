@@ -1,4 +1,7 @@
 
+# 1.0.3 (2018-05-08)
+
+* just introduced to trigger CI again
 
 # 1.0.2 (2018-05-08)
 
@@ -28,5 +31,4 @@ So this release changes:
   nginx and phpfpm at the same time)
 * provide a generic nginx and php-fpm config (no special vhost domain, no special php-fpm pool name)
 * nginx php-fpm host/port is configured via envsubst
-* 
 
