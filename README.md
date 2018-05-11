@@ -260,7 +260,6 @@ use the [ini-env-var substitution feature](http://php.net/manual/en/configuratio
 | PHP_EXTENSIONS                      | List of modules which should get compiled at build time (build base)              |
 | PHP_BUILD_PACKAGES                  | APT packages required to compile extensions                                       |
 | PHP_INI_DIR                         | Where to look for and store php ini files?                                        |
-| COMPOSER_ARGS                       | Additional `composer install` arguments, passed in `build > deps` subsection      |
 | PHP_INI_ALLOW_URL_FOPEN             | PHP ini _allow_url_fopen_ value                                                   |
 | PHP_INI_DATE_TIMEZONE               | PHP ini _date.timezone_ value                                                     |
 | PHP_INI_INCLUDE_PATH                | PHP ini _include\_path_ value                                                     |
@@ -287,6 +286,10 @@ use the [ini-env-var substitution feature](http://php.net/manual/en/configuratio
 | CONSOLE                             | Composer console command name                                                     |
 | CODECEPT                            | The codeception cli command name (with path)                                      |
 | CODECEPTION_ARGS                    | Args which should get added to the codeception cli command name                   |
+| COMPOSER_VERSION                    | Specify the composer version, which gets installed in `build > base`              |
+| COMPOSER_ARGS                       | Additional `composer install` arguments, passed in `build > deps` subsection      |
+| COMPOSER_DUMP_ARGS                  | Args applied to the `composer autodump` command                                   |
+
 
 ### Mailing
 
