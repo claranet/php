@@ -1,10 +1,9 @@
 FROM local/claranet/php:1.0.5-php7.2.5
 
 ENV DOCUMENT_ROOT="${WORKDIR}" \
-    COMPRESS_FILE_PATHS="js" \
-    ENABLE_BOWER="true"
+    COMPRESS_FILE_PATHS="js"
 
-ENV MATOMO_VERSION="3.4.0"
+ENV MATOMO_VERSION="3.5.0"
 
 COPY docker ${WORKDIR}/docker
 
