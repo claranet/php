@@ -5,13 +5,15 @@ set -eo pipefail
 WORKDIR=$(realpath $0 | xargs dirname | xargs dirname)
 
 export FROM_IMAGE=${FROM_IMAGE:-php:7.2.5-fpm-stretch}
+PHP_VERSION=${PHP_VERSION:-7.2.5}
 VERSION=${VERSION:-`cat $WORKDIR/VERSION`}
 IMAGE_NAME=${IMAGE_NAME:-local/claranet/php}
-IMAGE_TAG=${IMAGE_TAG:-$VERSION-php$DOCKER_IMAGE_FROM_TAG_VERSION_NUMBER}
+IMAGE_TAG=${IMAGE_TAG:-$VERSION-php$PHP_VERSION}
 IMAGE=${IMAGE:-"$IMAGE_NAME:$IMAGE_TAG"}
 
 test_image() {
     docker run --rm -t ${1} test
+    docker build -t local/matomo:$IMAGE_TAG -f example/matomo/Dockerfile example/matomo/
 }
 
 build_image() {
