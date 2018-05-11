@@ -1,4 +1,20 @@
 
+# 1.1.0 (2018-05-11)
+
+**IMPROVEMENTS**
+* add step in `build > deps` to run composer dumpautoload optimizations
+* introduce `$COMPOSER_DUMP_ARGS`, `$COMPOSER_VERSION` env vars
+* use the `example/matomo` reference image for tests as well
+* bump example/matomo matomo version to 3.5.0
+* simplify matomo fetch and install process in example/matomo
+* make composer version configurable
+
+**FIXES**
+* local builds for the base image were missing the PHP version in their docker tag
+* don't install composer package `hirak/prestissimo` in base AND deps; base is sufficient
+* don't drop packages.json/lock / composer.json/lock files in image clean up step
+* fix ERROR_EXIT_CODE isn't working
+
 # 1.0.5 (2018-05-08)
 
 * fix missing `npm` in PATH ( github issue #5 )
