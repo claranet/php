@@ -91,7 +91,6 @@ cleanup_docker_image() {
   
   sectionText "COMPOSER: remove package caches and composer.json files"
   eatmydata composer clear-cache &>>$BUILD_LOG
-  remove_recursive $WORKDIR/package.json $WORKDIR/package.lock /root/.composer /usr/bin/composer.phar
   
   sectionText "TMP: cleanup /tmp folder"
   remove_recursive /tmp/*
@@ -234,7 +233,7 @@ fail() {
   for line in "$@"; do
     errorText "$line"
   done
-  exit $exit
+  exit $ERROR_EXIT_CODE
 }
 
 retry() {
@@ -288,8 +287,9 @@ build_exit() {
     echo -e "\n\nBUILD LOG:"
     tail -n 100 $BUILD_LOG
     echo -e "BUILD FAILED!!!\n\n"
+    exit $ERROR_EXIT_CODE
   fi
-  exit $rc
+  exit 0
 }
 
 run_section() {
