@@ -63,7 +63,6 @@ ENV PHP="php" \
     PHP_BUILD_PACKAGES="re2c libmagickwand-6.q16-dev libbz2-dev libldap2-dev libgmp-dev libicu-dev libpq-dev libpq-dev libreadline6-dev libedit-dev libxml2-dev libcurl4-openssl-dev zlib1g-dev libfreetype6-dev libjpeg62-turbo-dev libpng-dev" \
     SYSTEM_PACKAGES="${SYSTEM_PACKAGES} libldap-2.4-2 libpng16-16 libicu57 libjpeg62-turbo libfreetype6 libmagickwand-6.q16-3 libmagickcore-6.q16-3" \
     PHP_INI_DIR="/usr/local/etc/php/conf.d" \
-    COMPOSER_ARGS="--no-dev" \
     PHP_INI_ALLOW_URL_FOPEN="Off" \
     PHP_INI_DATE_TIMEZONE="UTC" \
     PHP_INI_INCLUDE_PATH=".:${WORKDIR}:/usr/local/lib/php" \
@@ -89,7 +88,10 @@ ENV PHP="php" \
     BLACKFIRE_AGENT="blackfire:8707" \
     CONSOLE="exec_console" \
     CODECEPT="${WORKDIR}/vendor/bin/codecept" \
-    CODECEPTION_ARGS=""
+    CODECEPTION_ARGS="" \
+    COMPOSER_VERSION="1.6.5" \
+    COMPOSER_ARGS="--no-dev" \
+    COMPOSER_DUMP_ARGS="--optimize --classmap-authoritative --no-dev --apcu"
 
 # SMTP
 # https://symfony.com/doc/current/reference/configuration/swiftmailer.html
