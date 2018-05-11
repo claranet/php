@@ -1,4 +1,12 @@
 
+# 1.1.1 (2018-05-11)
+
+**UPDATES**
+* PHP 7.1.17 (from 7.1.16)
+
+**FIXES**
+* fix nodejs installation for PHP 7.1.x flavour (debian jessie has npm within the nodejs package)
+
 # 1.1.0 (2018-05-11)
 
 **IMPROVEMENTS**
