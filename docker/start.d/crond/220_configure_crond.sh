@@ -1,6 +1,6 @@
 #!/bin/bash
 
-files_sorted "/etc/cron.d"
+find_sorted "/etc/cron.d"
 if [ -z "$FILES_SORTED" ]; then
     sectionText "SKIP: no cron config files found in /etc/cron.d/"
     return 0
