@@ -1,12 +1,8 @@
 #!/bin/bash
 
-find_sorted "/etc/cron.d"
-if [ -z "$FILES_SORTED" ]; then
-    sectionText "SKIP: no cron config files found in /etc/cron.d/"
-    return 0
-fi
-
 enable_cron_configs() {
+    sectionText "Creating crond folder"
+    mkdir -p /var/spool/cron/crontabs
     for i in $FILES_SORTED; do
         local filename=$(basename $i)
         sectionText "Enable cron config $filename"
@@ -15,3 +11,10 @@ enable_cron_configs() {
 }
 
 
+find_sorted "/etc/cron.d"
+if [ -z "$FILES_SORTED" ]; then
+    sectionText "SKIP: no cron config files found in /etc/cron.d/"
+    return 0
+else
+    enable_cron_configs
+fi
