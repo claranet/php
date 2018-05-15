@@ -1,4 +1,9 @@
 
+# 1.1.2 (2018-05-15)
+**FIXES**
+* Create the folder /var/spool/cron/crontabs needed by crond
+* Move function `enable_cron_configs` above in the script
+
 # 1.1.1 (2018-05-11)
 
 **UPDATES**
