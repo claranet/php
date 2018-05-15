@@ -6,7 +6,7 @@ LABEL org.label-schema.name="php" \
       org.label-schema.version="0.1" \
       org.label-schema.description="Core PHP image" \
       org.label-schema.vendor="Claranet GmbH" \
-      org.label-schema.schema-version="1.1.1" \
+      org.label-schema.schema-version="1.1.2" \
       author1="Fabian Dörk <fabian.doerk@de.clara.net>" \
       author2="Tony Fahrion <tony.fahrion@de.clara.net>"
 
