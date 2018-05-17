@@ -1,4 +1,9 @@
 
+# 1.1.5 (2018-05-17)
+
+**FIXES**
+* remove deprecated docker/bin/gen\_crontab.php (spryker specific)
+
 # 1.1.4 (2018-05-17)
 
 **FIXES**
