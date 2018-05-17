@@ -4,6 +4,7 @@ version: '3'
 services: 
   nginx: 
     image: ${IMAGE}
+    restart: always
     command:
       - start
       - nginx
@@ -14,20 +15,20 @@ services:
 
   phpfpm: 
     image: ${IMAGE}
+    restart: always
     command:
       - start
       - phpfpm
+    environment:
+      MYSQL_HOST: "mysql"
+      MYSQL_USER: "matomouser"
+      MYSQL_PASSWORD: "test123"
 
-  # mysql:
-  #   image: "mysql:5.6"
-  #   restart: always
-  #   #deactivate sql mode 'only_full_group_by', otherwise inhouseportal won't work correctly
-  #   command:
-  #     - mysqld
-  #     - "--sql_mode=\"\""
-  #   environment:
-  #     - MYSQL_USER
-  #     - MYSQL_PASSWORD
-  #     - MYSQL_ROOT_PASSWORD
-  #   volumes:
-  #     - ./dump:/docker-entrypoint-initdb.d
+  mysql:
+    image: "mariadb:10.2.14"
+    restart: always
+    environment:
+      MYSQL_USER: "matomouser"
+      MYSQL_PASSWORD: "test123"
+      MYSQL_ROOT_PASSWORD: "test1234"
+      MYSQL_DATABASE: "matomo"
