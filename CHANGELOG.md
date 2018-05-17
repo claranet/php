@@ -1,4 +1,15 @@
 
+# 1.1.4 (2018-05-17)
+
+**FIXES**
+* make example/matomo work on localhost via docker-compose
+
+
+# 1.1.3 (2018-05-15)
+
+**FIXES**
+* remove matomo build from CI tests
+
 # 1.1.2 (2018-05-15)
 **FIXES**
 * Create the folder /var/spool/cron/crontabs needed by crond
