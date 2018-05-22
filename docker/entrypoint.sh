@@ -3,7 +3,9 @@
 cd $WORKDIR
 
 # include all .inc.sh files, so consumers are able to provide their own functions
-source $WORKDIR/docker/*.inc.sh
+for i in $WORKDIR/docker/*.inc.sh; do
+  source $i
+done
 
 get_sections # defines $SECTIONS
 case $1 in
