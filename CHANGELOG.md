@@ -1,4 +1,12 @@
 
+# 1.1.6 (2018-05-22)
+
+**FIXES**
+* include multiple docker/\*.inc.sh files
+
+**IMPROVEMENTS**
+* let bump2version also push tags / commits
+
 # 1.1.5 (2018-05-17)
 
 **FIXES**
