@@ -1,4 +1,9 @@
 
+# 1.1.7 (2018-05-23)
+
+**FIXES**
+* wait\_for\_tcp\_service timeout calculation
+
 # 1.1.6 (2018-05-22)
 
 **FIXES**
