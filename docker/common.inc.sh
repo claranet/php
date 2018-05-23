@@ -199,8 +199,9 @@ is_tcp_service_running() {
 
 # retries to connect to an remote address ($1) and port ($2) until the connection could be established
 wait_for_tcp_service() {
-  local until_seconds=$(($SECONDS + ${$3:-600})) # 600 = 10min, in seconds
-  until is_tcp_service_running $1 $2 && [$SECONDS -lt $until_seconds]; do
+  local time_diff=${3:-600} # 600 = 10min, in seconds
+  local until_seconds=$(($SECONDS + $time_diff))
+  until is_tcp_service_running $1 $2 && test $SECONDS -lt $until_seconds; do
     sectionText "Wait for tcp://$1:$2 to come up ..."
     sleep 1
   done
@@ -225,7 +226,7 @@ wait_for_http_service() {
     sleep 1
   done
   
-  sectionText "Success: $1 seems to be up and running"
+  sectionText "Success: $url is reachable"
 }
 
 fail() {
