@@ -1,4 +1,10 @@
 
+# 1.1.8 (2018-06-07)
+
+**UPDATES**
+* PHP 7.1.18 and 7.2.6
+* matomo example matomo version 3.5.1
+
 # 1.1.7 (2018-05-23)
 
 **FIXES**
