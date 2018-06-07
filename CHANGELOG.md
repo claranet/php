@@ -1,4 +1,9 @@
 
+# 1.1.9 (2018-06-07)
+
+**FIXES**
+* allow users to change the PHP opcache optimization level
+
 # 1.1.8 (2018-06-07)
 
 **UPDATES**
