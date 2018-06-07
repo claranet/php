@@ -28,3 +28,11 @@
 * entry:  helo world
 * medium: claranet/matomo
 * expert: claranet/spryker-demoshop
+
+# Minor versions
+
+* add generic args to support github / gitlab / bitbucket netrc auto-generation (and mark gitlab args as deprecated)
+
+# Version 2.0 of the image
+
+* remove ONBUILD gitlab args in favour of more generic args
