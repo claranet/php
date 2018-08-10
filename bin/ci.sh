@@ -5,8 +5,8 @@ WORKDIR=$(realpath $0 | xargs dirname | xargs dirname)
 
 export VERSION=$(cat $WORKDIR/VERSION)
 export IMAGE_NAME="claranet/php"
-FROM_IMAGE_TAGS="7.1.18-fpm-jessie 7.2.6-fpm-stretch"
-LATEST_IMAGE="7.2.6-fpm-stretch"
+FROM_IMAGE_TAGS="7.1.20-fpm-jessie 7.2.8-fpm-stretch"
+LATEST_IMAGE="7.2.8-fpm-stretch"
 
 # based on $TRAVIS_BRANCH
 # we decide to...
