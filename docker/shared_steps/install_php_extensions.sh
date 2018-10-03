@@ -11,14 +11,13 @@ php_install_gd() {
 }
 
 php_install_ldap() {
-  local php=$(which php)
-  local php_version=$($php --version | head -n1 | cut -d " " -f 2 | cut -d . -f 1,2)
+  local php_version=$($PHP --version | head -n1 | cut -d " " -f 2 | cut -d . -f 1,2)
   if [ $php_version = "7.0" ]; then
-    install_packages "libldb-dev"
+    install_packages --build "libldb-dev"
     ln -s /usr/lib/x86_64-linux-gnu/libldap.so /usr/lib/libldap.so
   fi
-    sectionText "Use core install"
-    eatmydata docker-php-ext-install -j$COMPILE_JOBS $ext &>> $BUILD_LOG
+  sectionText "Use core install"
+  eatmydata docker-php-ext-install -j$COMPILE_JOBS $ext &>> $BUILD_LOG
 }
 
 php_install_extensions() {
