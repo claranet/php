@@ -31,7 +31,7 @@ ENV ENABLE_GCP="${ENABLE_GCP:-0}" \
 # ssmtp: synchronouse mailer, very handy in CLI scripts on docker
 ENV PATH="${PATH}:${WORKDIR}/docker/bin" \
     BUILD_PACKAGES="ccache build-essential unzip" \
-    SYSTEM_PACKAGES="ssmtp busybox-static netcat vim less tree libtcmalloc-minimal4 git postgresql-client gettext nginx" \
+    SYSTEM_PACKAGES="ssmtp busybox-static netcat vim less tree libtcmalloc-minimal4 git postgresql-client gettext nginx apache2" \
     JESSIE_PACKAGE_MAP="libpng16-16:libpng12-0 libicu57:libicu52 libmagickwand-6.q16-3:libmagickwand-6.q16-2 libmagickcore-6.q16-3:libmagickcore-6.q16-2 npm:" \
     ENABLE_NEWRELIC="false"
 
@@ -44,6 +44,16 @@ ENV NGINX_SITES_AVAILABLE="/etc/nginx/sites-available" \
     DOCUMENT_ROOT="${WORKDIR}/public" \
     COMPRESS_FILE_MATCH="^.*\.(css|js|xml|csv|txt|md|html)\$" \
     COMPRESS_FILE_PATHS="public"
+
+# APACHE
+ENV APACHE_SITES_AVAILABLE="/etc/apache2/sites-available" \
+    APACHE_SITES_ENABLED="/etc/apache2/sites-enabled" \
+    APACHE_DIRECTORY_INDEX="index.html index.php" \
+    APACHE_OVERRIDE="none" \
+    APACHE_MODS_ENABLE="rewrite headers" \
+    PHPFPM_HOST="127.0.0.1" \
+    PHPFPM_PORT="9000" \
+    DOCUMENT_ROOT="${WORKDIR}/public" 
 
 # NODEJS
 ENV ENABLE_NODEJS="true" \

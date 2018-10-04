@@ -1,0 +1,1 @@
+SECTION_DESCRIPTION="Starts Apache2 in foreground, logging to stdout/stderr"
