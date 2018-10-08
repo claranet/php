@@ -1,4 +1,9 @@
 
+# 1.1.11 (2018-10-08)
+
+**FIXES**
+* fix installing php ldap extension
+
 # 1.1.10 (2018-08-10)
 
 **UPDATES**
