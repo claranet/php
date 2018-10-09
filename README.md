@@ -232,6 +232,17 @@ Nginx does not support environment variables by itself (except if you enable the
 | COMPRESS_FILE_MATCH   | Extended regex for matching files which should be compressed for nginx |
 | COMPRESS_FILE_PATHS   | Where to look for files to be compressed during build time             |
 
+### Apache2
+| Name                   | Description                                                            |
+|------------------------|------------------------------------------------------------------------|
+| APACHE_SITES_AVAILABLE | Path to the `sites-available/` directory                               |
+| APACHE_SITES_ENABLED.  | Path to the `sites-enabled/` directory                                 |
+| APACHE_DIRECTORY_INDEX | Apaceh Index Conditions                                                |
+| APACHE_OVERRIDE        | Apache Override Conditions                                             |
+| APACHE_MODS_ENABLE     | Apache Modules Enabled to run time                                     |    
+| PHPFPM_HOST            | IP/Domain where to find the php-fpm fastcgi service                    |
+| PHPFPM_PORT            | Port of the php-fpm fastcgi service                                    | 
+| DOCUMENT_ROOT          | Default document root for the default vhost                            |
 
 ### NodeJS
 
