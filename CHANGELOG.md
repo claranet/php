@@ -1,3 +1,7 @@
+# 1.1.12 (2018-10-10)
+
+**FIXES**
+* fix enable PHP Modules on start
 
 # 1.1.11 (2018-10-08)
 
