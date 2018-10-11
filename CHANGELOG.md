@@ -1,3 +1,8 @@
+# 1.1.14 (2018-10-17)
+
+**FIXES**
+* fix name of env var `PHP_INI_POST_MAX_SIZE` ( from `PHP_INI_POSTMAX_SIZE` ), the old version still works but will be removed with version 2.0.0
+
 # 1.1.13 (2018-10-16)
 
 **UPDATES**
