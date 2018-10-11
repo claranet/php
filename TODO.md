@@ -36,3 +36,4 @@
 # Version 2.0 of the image
 
 * remove ONBUILD gitlab args in favour of more generic args
+* remove 101_fix_php_env.sh from start.d
