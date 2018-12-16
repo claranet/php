@@ -74,6 +74,10 @@ cleanup_docker_image() {
 
   if [ -e '/var/tmp/build-deps.list' ]; then
     sectionText "APT: remove build packages and caches"
+    for sp in $SYSTEM_PACKAGES
+    do
+      sed -i -e "/$sp/d" /var/tmp/build-deps.list
+    done
     local pkg_list=`tr '\n' ' ' < /var/tmp/build-deps.list`
     if [ ! -z "$pkg_list" ]; then
       eatmydata apt-get purge -y -qq $pkg_list &>> $BUILD_LOG
