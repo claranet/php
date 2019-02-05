@@ -28,6 +28,8 @@ php_install_extensions() {
   local already_installed_extensions=`php -m | egrep '^([A-Za-z_]+)$' | tr '[:upper:]' '[:lower:]'`
   local php_extensions_count=`echo $extensions | wc -w`
   local php_extensions_counter="1"
+  
+  mkdir '/usr/local/etc/php/conf.d/conf.d'
 
   for ext in $extensions; do
     sectionText "Install PHP extension ($php_extensions_counter/$php_extensions_count) $ext"
