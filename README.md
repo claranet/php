@@ -42,7 +42,7 @@ set via environment variables and makes it easy to check external services (like
 * shipped as PHP 7.1.x and 7.2.x flavor
 * there is a (build>base already run / build>base only prepared) flavor for each PHP version
 * general run concept: `docker run --rm -t claranet/php:1.1.16-php7.2.15 <main-section> [subsection] [subsection-args, ...]`
-* overview: `docker run --rm -t claranet/php:1.1.16-php7.2.5 help`
+* overview: `docker run --rm -t claranet/php:1.1.16-php7.2.15 help`
 * supplied services
     - nginx
     - phpfpm
