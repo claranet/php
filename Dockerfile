@@ -6,7 +6,7 @@ LABEL org.label-schema.name="php" \
       org.label-schema.version="0.1" \
       org.label-schema.description="Core PHP image" \
       org.label-schema.vendor="Claranet GmbH" \
-      org.label-schema.schema-version="1.1.15" \
+      org.label-schema.schema-version="1.1.16" \
       author1="Fabian Dörk <fabian.doerk@de.clara.net>" \
       author2="Tony Fahrion <tony.fahrion@de.clara.net>"
 
@@ -59,7 +59,7 @@ ENV PHP="php" \
     NEWRELIC_PHP_VERSION="php5-8.0.0.204" \
     PHP_EXTENSIONS_STARTUP_ONLY="xdebug APCu imagick redis" \
     PHP_EXTENSIONS_STARTUP_ENABLE="" \
-    PHP_EXTENSIONS="bcmath bz2 gd gmp intl json mbstring opcache dom curl pgsql pdo_pgsql pdo_mysql ldap soap zip xdebug-2.6.0 imagick-3.4.3 redis-3.1.2 APCu" \
+    PHP_EXTENSIONS="bcmath bz2 gd gmp intl json mbstring opcache dom curl pgsql pdo_pgsql pdo_mysql ldap soap zip xdebug-2.6.1 imagick-3.4.3 redis-3.1.6 APCu" \
     PHP_BUILD_PACKAGES="re2c libmagickwand-6.q16-dev libbz2-dev libldap2-dev libgmp-dev libicu-dev libpq-dev libpq-dev libreadline6-dev libedit-dev libxml2-dev libcurl4-openssl-dev zlib1g-dev libfreetype6-dev libjpeg62-turbo-dev libpng-dev" \
     SYSTEM_PACKAGES="${SYSTEM_PACKAGES} libldap-2.4-2 libpng16-16 libicu57 libjpeg62-turbo libfreetype6 libmagickwand-6.q16-3 libmagickcore-6.q16-3" \
     PHP_INI_DIR="/usr/local/etc/php" \
