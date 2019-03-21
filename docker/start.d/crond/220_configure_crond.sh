@@ -6,7 +6,7 @@ enable_cron_configs() {
     for i in $FILES_SORTED; do
         local filename=$(basename $i)
         sectionText "Enable cron config $filename"
-        ln -vs $i /var/spool/cron/crontabs/$filename &>> $BUILD_LOG
+        ln -vfs $i /var/spool/cron/crontabs/$filename &>> $BUILD_LOG
     done
 }
 
