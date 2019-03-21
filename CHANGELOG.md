@@ -1,3 +1,8 @@
+# 1.1.17 (2019-03-21)
+
+**FIXES**
+* fix using the cronjob start job within docker-compose (it fails to start after a previous shutdown/stop)
+
 # 1.1.16 (2019-03-01)
 **UPDATES**
 * PHP 7.2.15
