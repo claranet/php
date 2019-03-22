@@ -395,3 +395,20 @@ Regards,
 Me - the CLI
 EOF
 ```
+------
+## PHP 7.3
+Upgrading to PHP 7.3 base image creates problems with zip extension. It requires libzip-dev on build and then still fails on start with with errors:
+```
+PHP Startup: Unable to load dynamic library 'zip.so' (tried: /usr/local/lib/php/extensions/no-debug-non-zts-20180731/zip.so (libzip.so.4: cannot open shared object file: No such file or directory), /usr/local/lib/php/extensions/no-debug-non-zts-20180731/zip.so.so (/usr/local/lib/php/extensions/no-debug-non-zts-20180731/zip.so.so: cannot open shared object file: No such file or directory)) in Unknown on line 0
+```
+
+```
+The "https://getcomposer.org/download/1.6.5/composer.phar.sig" file could not be downloaded: https:// wrapper is disabled in the server configuration by allow_url_fopen=0
+failed to open stream: no suitable wrapper could be found
+```
+
+Suspected cause [PHP 7.3 upgrade notes, chapter 9: "Other Changes to Extensions"](https://github.com/php/php-src/blob/php-7.3.0beta1/UPGRADING):
+> Bundled libzip has been dropped,
+> system library is now required.
+
+There is also a whole chapter on `Backward Incompatible Changes` in `PHP 7.3 UPGRADE NOTES`, so there may be more problems.
