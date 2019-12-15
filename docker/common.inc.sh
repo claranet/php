@@ -147,6 +147,16 @@ enable_nginx_vhost() {
   envsubst '$DOCUMENT_ROOT $PHPFPM_HOST $PHPFPM_PORT $ASSET_BUCKET_NAME' > /etc/nginx/sites-enabled/${1}.conf < /etc/nginx/sites-available/${1}.conf
 }
 
+enable_apache2_vhost() {
+  if [ ! -e $APACHE_SITES_AVAILABLE/$1.conf ]; then
+    errorText "\t Apache vhost '$1' not found! Can't enable vhost!"
+    exit 1
+  fi
+  
+  sectionText "Enable Apache vhost $1"
+  ln -sf /etc/apache2/sites-available/${1}.conf /etc/apache2/sites-enabled/${1}.conf
+}
+
 npm_install() {
   local npm_dir="$1"; shift
 
