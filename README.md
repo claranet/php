@@ -41,8 +41,8 @@ set via environment variables and makes it easy to check external services (like
 * provides generic build and life cycle infrastructure for containerized PHP applications (well prepared for kubernetes)
 * shipped as PHP 7.1.x and 7.2.x flavor
 * there is a (build>base already run / build>base only prepared) flavor for each PHP version
-* general run concept: `docker run --rm -t claranet/php:1.1.31-php7.2.23 <main-section> [subsection] [subsection-args, ...]`
-* overview: `docker run --rm -t claranet/php:1.1.31-php7.2.23 help`
+* general run concept: `docker run --rm -t claranet/php:1.1.31-php7.2.24 <main-section> [subsection] [subsection-args, ...]`
+* overview: `docker run --rm -t claranet/php:1.1.31-php7.2.24 help`
 * supplied services
     - nginx
     - phpfpm
@@ -50,7 +50,7 @@ set via environment variables and makes it easy to check external services (like
 
 Build image locally:
 ```sh
-# generates local/claranet/php:1.1.31-php7.2.23
+# generates local/claranet/php:1.1.31-php7.2.24
 ./bin/image.sh build
 ```
 
