@@ -19,9 +19,6 @@ configure_msmtp() {
 host ${SMTP_HOST}
 port ${SMTP_PORT}
 
-host mailrelay-exim.services-stage.svc
-port 25
-
 tls off
 tls_starttls off
 
