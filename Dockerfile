@@ -94,6 +94,14 @@ ENV PHP="php" \
     COMPOSER_ARGS="--no-dev" \
     COMPOSER_DUMP_ARGS="--optimize --classmap-authoritative --no-dev --apcu"
 
+# PHP-FPM DEFAULT POOL
+ENV FPM_PM="dynamic" \
+    FPM_PM_MAX_CHILDREN="50" \
+    FPM_PM_START_SERVERS="5" \
+    FPM_PM_MIN_SPARE_SERVERS="5" \
+    FPM_PM_MAX_SPARE_SERVERS="5" \
+    FPM_PM_MAX_REQUESTS="500"
+
 # SMTP
 # https://symfony.com/doc/current/reference/configuration/swiftmailer.html
 ENV ENABLE_SMTP="false" \
