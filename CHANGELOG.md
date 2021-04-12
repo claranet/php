@@ -1,3 +1,8 @@
+# 1.1.49 (2021-04-12)
+
+**IMPROVEMENTS**
+* Make default pool pm configurable via environment variables
+
 # 1.1.48 (2020-01-19)
 **UPDATES**
 * PHP 7.3.13

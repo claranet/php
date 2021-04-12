@@ -290,6 +290,16 @@ use the [ini-env-var substitution feature](http://php.net/manual/en/configuratio
 | COMPOSER_ARGS                       | Additional `composer install` arguments, passed in `build > deps` subsection      |
 | COMPOSER_DUMP_ARGS                  | Args applied to the `composer autodump` command                                   |
 
+### PHP-FPM (Default Pool)
+
+| Name                                | Description                               |
+|-------------------------------------|-------------------------------------------|
+| FPM_PM			      | Process management type e.g dynamic    	  |
+| FPM_PM_MAX_CHILDREN                 | pm.max_children in default pool	       	  |
+| FPM_PM_START_SERVERS                | pm.start_servers in default pool       	  |
+| FPM_PM_MIN_SPARE_SERVERS            | pm.min_spare_servers in default pool   	  |
+| FPM_PM_MAX_SPARE_SERVERS            | pm.max_spare_servers in default pool   	  |
+| FPM_PM_MAX_REQUESTS                 | pm.max_requests in default pool	       	  |
 
 ### Mailing
 
@@ -321,7 +331,11 @@ The php-fpm configuration is designed to match a generic pattern - optimized to 
 per container. Normally you shouldn't be required to change the fpm configuration at all - if your container
 needs to handle more requests, launch another one and balance the traffic.substitute
 
-If you still need to extend the php-fpm config - the `start > phpfpm` subsection is prepared to launch different
+If you still need to extend the php-fpm config there are 2 options:
+
+1) Adjust the environment variables for the default pool e.g. `FPM_PM_MAX_CHILDREN`.
+
+2) The `start > phpfpm` subsection is prepared to launch different
 fpm pools. To launch e.g. a pool named `wordpress`, after you added the pools config to the container:
 `/entrypoint.sh start phpfpm wordpress`
 
