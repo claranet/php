@@ -1,3 +1,11 @@
+# 1.1.50 (2021-04-28)
+
+**FIXES**
+* `opcache.opt_debug_level` set default of `0`
+
+**IMPROVEMENTS**
+* Make `opcache.opt_debug_level` configurable via environment variable
+
 # 1.1.49 (2021-04-12)
 
 **IMPROVEMENTS**
