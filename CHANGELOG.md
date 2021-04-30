@@ -1,3 +1,8 @@
+# 1.1.51 (2021-04-30)
+
+**IMPROVEMENTS**
+* Make image usable with debian buster. This is needed for msmtp.
+
 # 1.1.50 (2021-04-28)
 
 **FIXES**
