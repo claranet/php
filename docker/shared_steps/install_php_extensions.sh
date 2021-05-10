@@ -6,7 +6,14 @@ if [ -z "$PHP_EXTENSIONS" ]; then
 fi
 
 php_install_gd() {
-  eatmydata docker-php-ext-configure $ext --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/
+  local php_version=$($PHP --version | head -n1 | cut -d " " -f 2 | cut -d . -f 1,2)
+
+  if [ $php_version = "7.4" ]; then
+      eatmydata docker-php-ext-configure $ext --enable-gd --with-freetype --with-jpeg
+  else
+      eatmydata docker-php-ext-configure $ext --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/
+  fi
+
   eatmydata docker-php-ext-install -j$COMPILE_JOBS $ext
 }
 
