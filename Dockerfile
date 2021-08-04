@@ -31,7 +31,7 @@ ENV ENABLE_GCP="${ENABLE_GCP:-0}" \
 # ssmtp: synchronouse mailer, very handy in CLI scripts on docker
 ENV PATH="${PATH}:${WORKDIR}/docker/bin" \
     BUILD_PACKAGES="ccache build-essential unzip zip" \
-    SYSTEM_PACKAGES="ssmtp busybox-static netcat vim less tree libtcmalloc-minimal4 git postgresql-client gettext nginx" \
+    SYSTEM_PACKAGES="ssmtp busybox-static netcat vim less tree libtcmalloc-minimal4 git postgresql-client gettext nginx apt-transport-https" \
     JESSIE_PACKAGE_MAP="libpng16-16:libpng12-0 libicu57:libicu52 libmagickwand-6.q16-3:libmagickwand-6.q16-2 libmagickcore-6.q16-3:libmagickcore-6.q16-2 npm:" \
     BUSTER_PACKAGE_MAP="libicu57:libicu63 libmagickwand-6.q16-3:libmagickwand-6.q16-6 libmagickcore-6.q16-3:libmagickcore-6.q16-6 ssmtp:msmtp" \
     ENABLE_NEWRELIC="false"
@@ -48,7 +48,7 @@ ENV NGINX_SITES_AVAILABLE="/etc/nginx/sites-available" \
 
 # NODEJS
 ENV ENABLE_NODEJS="true" \
-    NODEJS_VERSION="8" \
+    NODEJS_VERSION="14" \
     ENABLE_BOWER="true" \
     NPM="npm" \
     NPM_BUILD_PACKAGES="" \
