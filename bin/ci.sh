@@ -8,28 +8,29 @@ export IMAGE_NAME="claranet/php"
 FROM_IMAGE_TAGS="7.1.33-fpm-jessie 7.2.26-fpm-stretch 7.3.13-fpm-stretch"
 LATEST_IMAGE="7.3.13-fpm-stretch"
 
-# based on $TRAVIS_BRANCH
-# we decide to...
+# Based on $GITHUB_HEAD_REF which is set fot pull requests 
+# and $RELEASE_VERSION which holds either the branch name or tag
+# We decide to...
 #  * release on == (e.g.) 1.1.1 tags
 #  * build/test only if this is a PR
 #  * build/test/publish with master tag if this is a push to master
 run_ci() {
     # Pull requests
-    if [ ! -z "$TRAVIS_PULL_REQUEST" ] && [ "$TRAVIS_PULL_REQUEST" != "false" ]; then
+    if [ ! -z "$GITHUB_HEAD_REF" ]; then
         printf "\nPull Request\n"
         stage_pr
         return $?
     fi
 
     # Push to MASTER
-    if [ "$TRAVIS_BRANCH" = "master" ] && [ "$TRAVIS_PULL_REQUEST" = "false" ]; then
+    if [ "$RELEASE_VERSION" = "master" ] && [ ! -z "$GITHUB_HEAD_REF" ]; then
         printf "\nPush to master\n"
         stage_publish
         return $?
     fi
 
     # Tags
-    if echo "$TRAVIS_TAG" | egrep '^([0-9]+\.[0-9]+\.[0-9]+)$' &> /dev/null; then
+    if echo "$RELEASE_VERSION" | egrep '^([0-9]+\.[0-9]+\.[0-9]+)$' &> /dev/null; then
         printf "\nTag Release\n"
         stage_release
         return $?
@@ -58,7 +59,7 @@ stage_pr() {
 stage_publish() {
     stage_pr
     dockerhub_login
-    run_per_php_flavour publish_image $TRAVIS_BRANCH
+    run_per_php_flavour publish_image $RELEASE_VERSION
 }
 stage_release() {
     stage_publish
