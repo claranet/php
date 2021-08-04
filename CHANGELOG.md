@@ -1,3 +1,9 @@
+# 1.1.55 (2021-08-04)
+
+**UPDATES**
+* Fix GitHub Actions by introducing new env var RELEASE_VERSION to base
+  decision on it wether to publish or only build/test the image.
+
 # 1.1.54 (2021-08-04)
 
 **UPDATES**
