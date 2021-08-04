@@ -1,0 +1,24 @@
+name: Build and Publish Docker Image
+
+# Controls when the workflow will run
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-18.04
+
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+
+      - name: Update the package lists
+        run: sudo apt update
+
+      - name: Install realpath and gettext
+        run: sudo apt install -y realpath gettext
+
+      - name: Build and publish image
+        run: ./bin/ci.sh run master
