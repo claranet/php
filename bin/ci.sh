@@ -23,7 +23,7 @@ run_ci() {
     fi
 
     # Push to MASTER
-    if [ "$RELEASE_VERSION" = "master" ] && [ ! -z "$GITHUB_HEAD_REF" ]; then
+    if [ "$RELEASE_VERSION" = "master" ] && [ -z "$GITHUB_HEAD_REF" ]; then
         printf "\nPush to master\n"
         stage_publish
         return $?

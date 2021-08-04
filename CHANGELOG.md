@@ -1,3 +1,8 @@
+# 1.1.56 (2021-08-04)
+
+**UPDATES**
+* Fix the CI shell script to properly distinguish push to master/tag
+
 # 1.1.55 (2021-08-04)
 
 **UPDATES**
