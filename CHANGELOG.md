@@ -1,3 +1,18 @@
+# 1.1.54 (2021-08-04)
+
+**UPDATES**
+* Replace TravisCI with Github Actions
+
+# 1.1.53 (2021-08-03)
+
+**IMPROVEMENTS**
+* Fix php warning about missing libzip
+
+# 1.1.52 (2021-05-10)
+
+**IMPROVEMENTS**
+* Patch GD installation for PHP 7.4
+
 # 1.1.51 (2021-04-30)
 
 **IMPROVEMENTS**
