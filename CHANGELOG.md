@@ -1,3 +1,21 @@
+# 1.1.57 (2021-08-05)
+
+**UPDATES**
+* Update PHP versions to include latest patches:
+  * 7.1.33 (now stretch, before jessie)
+  * 7.2.34
+  * 7.3.28
+* Updated NodeJS version to latest LTS v14
+**IMPROVEMENTS**
+* Fix the broken build at installation of NodeJS which requires
+  apt-transport-https to be installed. This didn't work in older versions of 
+  the php base images.
+* Fix the Matomo dockerfile which was used for testing to use the images from
+  the current PHP flavour which is tested. Prior it used the latest image which
+  for the time being was broken at nodejs installation state and made this
+  CI failing.
+
+
 # 1.1.56 (2021-08-04)
 
 **UPDATES**
