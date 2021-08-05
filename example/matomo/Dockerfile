@@ -1,4 +1,4 @@
-FROM claranet/php:latest
+FROM ${IMAGE}
 
 ENV DOCUMENT_ROOT="${WORKDIR}" \
     COMPRESS_FILE_PATHS="js"

@@ -13,11 +13,11 @@ IMAGE=${IMAGE:-"$IMAGE_NAME:$IMAGE_TAG"}
 
 test_image() {
     docker run --rm -t ${1} test
-    docker build --no-cache -t local/matomo:$IMAGE_TAG -f example/matomo/Dockerfile example/matomo/
+    envsubst '$IMAGE' < example/matomo/Dockerfile | docker build -t local/matomo:$IMAGE_TAG -f - example/matomo/
 }
 
 build_image() {
-    envsubst '$FROM_IMAGE' < Dockerfile | docker build --no-cache -t $* -f - ${WORKDIR}
+    envsubst '$FROM_IMAGE' < Dockerfile | docker build -t $* -f - ${WORKDIR}
 }
 
 
