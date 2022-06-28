@@ -8,7 +8,7 @@ fi
 php_install_gd() {
   local php_version=$($PHP --version | head -n1 | cut -d " " -f 2 | cut -d . -f 1,2)
 
-  if [ $php_version = "7.4" ]; then
+  if $(dpkg --compare-versions "$php_version" "ge" "7.4"); then
       eatmydata docker-php-ext-configure $ext --enable-gd --with-freetype --with-jpeg
   else
       eatmydata docker-php-ext-configure $ext --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/

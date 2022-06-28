@@ -4,8 +4,8 @@ set -x
 set -eo pipefail
 WORKDIR=$(realpath $0 | xargs dirname | xargs dirname)
 
-export FROM_IMAGE=${FROM_IMAGE:-php:7.3.13-fpm-stretch}
-PHP_VERSION=${PHP_VERSION:-7.3.13}
+export FROM_IMAGE=${FROM_IMAGE:-php:8.1.7-fpm-buster}
+PHP_VERSION=${PHP_VERSION:-8.1.7}
 VERSION=${VERSION:-`cat $WORKDIR/VERSION`}
 IMAGE_NAME=${IMAGE_NAME:-local/claranet/php}
 IMAGE_TAG=${IMAGE_TAG:-$VERSION-php$PHP_VERSION}

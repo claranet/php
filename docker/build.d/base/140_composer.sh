@@ -9,9 +9,6 @@ php_install_composer() {
   sectionText "Install PHP composer"
   eatmydata $PHP /tmp/composer-setup.php --install-dir=/usr/bin/ --version=$COMPOSER_VERSION --filename=composer &>> $BUILD_LOG
 
-  # make the installation process of `composer install` faster by parallel downloads
-  PHP_INI_ALLOW_URL_FOPEN=yes eatmydata composer global require hirak/prestissimo &>> $BUILD_LOG
-
   sectionText "Change git transport from SSH to HTTPS ..."
   eatmydata composer config --global github-protocols https &>> $BUILD_LOG
 }
