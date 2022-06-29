@@ -1,3 +1,12 @@
+# 1.1.58 (2022-06-29)
+
+**UPDATES**
+* Update PHP version to 8.1.7 
+* Update composer to version 2.3.7
+* Update several PHP extensions
+* Use debian buster
+
+
 # 1.1.57 (2021-08-05)
 
 **UPDATES**
