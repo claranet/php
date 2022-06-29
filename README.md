@@ -39,7 +39,7 @@ set via environment variables and makes it easy to check external services (like
 
 * extends official docker php images
 * provides generic build and life cycle infrastructure for containerized PHP applications (well prepared for kubernetes)
-* shipped as PHP 7.1.x, 7.2.x and 7.3.x 8.1.x flavor
+* shipped as PHP 8.1.x flavor
 * there is a (build>base already run / build>base only prepared) flavor for each PHP version
 * general run concept: `docker run --rm -t claranet/php:1.1.58-php8.1.7 <main-section> [subsection] [subsection-args, ...]`
 * overview: `docker run --rm -t claranet/php:1.1.58-php8.1.7 help`

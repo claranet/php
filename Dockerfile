@@ -48,7 +48,7 @@ ENV NGINX_SITES_AVAILABLE="/etc/nginx/sites-available" \
 
 # NODEJS
 ENV ENABLE_NODEJS="true" \
-    NODEJS_VERSION="14" \
+    NODEJS_VERSION="18" \
     ENABLE_BOWER="true" \
     NPM="npm" \
     NPM_BUILD_PACKAGES="" \
@@ -57,7 +57,7 @@ ENV ENABLE_NODEJS="true" \
 # PHP
 ENV PHP="php" \
     FPM="php-fpm" \
-    NEWRELIC_PHP_VERSION="php5-8.0.0.204" \
+    NEWRELIC_PHP_VERSION="php5-9.21.0.311" \
     PHP_EXTENSIONS_STARTUP_ONLY="xdebug APCu imagick redis" \
     PHP_EXTENSIONS_STARTUP_ENABLE="" \
     PHP_EXTENSIONS="bcmath bz2 gd gmp intl json mbstring opcache dom curl pgsql pdo_pgsql pdo_mysql ldap soap zip xdebug-3.1.5 imagick-3.7.0 redis-5.3.7 APCu" \
@@ -86,7 +86,7 @@ ENV PHP="php" \
     PHP_INI_MAX_FILE_UPLOADS="100" \
     PHP_INI_SHORT_OPEN_TAG="False" \
     PHP_INI_NEWRELIC_APPNAME="myapp" \
-    PHP_INI_NEWRELIC_FRAMEWORK="symfony2" \
+    PHP_INI_NEWRELIC_FRAMEWORK="symfony4" \
     PHP_INI_NEWRELIC_LICENSE="xxx" \
     BLACKFIRE_AGENT="blackfire:8707" \
     CONSOLE="exec_console" \
