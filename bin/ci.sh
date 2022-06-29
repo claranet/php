@@ -5,7 +5,7 @@ WORKDIR=$(realpath $0 | xargs dirname | xargs dirname)
 
 export VERSION=$(cat $WORKDIR/VERSION)
 export IMAGE_NAME="claranet/php"
-FROM_IMAGE_TAGS="7.1.33-fpm-stretch 7.2.34-fpm-stretch 7.3.28-fpm-stretch 8.1.7-fpm-buster"
+FROM_IMAGE_TAGS="8.1.7-fpm-buster"
 LATEST_IMAGE="8.1.7-fpm-buster"
 
 # Based on $GITHUB_HEAD_REF which is set fot pull requests 
