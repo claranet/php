@@ -140,6 +140,24 @@ install_packages() {
     done
   fi
 
+  if [ "$DIST" = "bullseye" ]; then
+    sectionText "Found bullseye distribution, map package names"
+    for r in $BULLSEYE_PACKAGE_MAP; do
+      local from=`echo "$r" | cut -d: -f1`
+      local to=`echo "$r" | cut -d: -f2`
+      pkg_list=`echo "$pkg_list" | sed "s/$from/$to/g"`
+    done
+  fi
+
+  if [ "$DIST" = "bookworm" ]; then
+    sectionText "Found bookworm distribution, map package names"
+    for r in $BOOKWORM_PACKAGE_MAP; do
+      local from=`echo "$r" | cut -d: -f1`
+      local to=`echo "$r" | cut -d: -f2`
+      pkg_list=`echo "$pkg_list" | sed "s/$from/$to/g"`
+    done
+  fi
+
   if [ -n "$pkg_list" ]; then
     sectionText "Install $package_description: $pkg_list"
     http_proxy=$PROXY eatmydata apt-get install $install_flags $pkg_list &>> $BUILD_LOG

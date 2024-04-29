@@ -31,9 +31,11 @@ ENV ENABLE_GCP="${ENABLE_GCP:-0}" \
 # ssmtp: synchronouse mailer, very handy in CLI scripts on docker
 ENV PATH="${PATH}:${WORKDIR}/docker/bin" \
     BUILD_PACKAGES="ccache build-essential unzip zip" \
-    SYSTEM_PACKAGES="ssmtp busybox-static netcat vim less tree libtcmalloc-minimal4 git postgresql-client gettext nginx apt-transport-https" \
+    SYSTEM_PACKAGES="ssmtp busybox-static netcat-traditional vim less tree libtcmalloc-minimal4 git postgresql-client gettext nginx apt-transport-https" \
     JESSIE_PACKAGE_MAP="libpng16-16:libpng12-0 libicu57:libicu52 libmagickwand-6.q16-3:libmagickwand-6.q16-2 libmagickcore-6.q16-3:libmagickcore-6.q16-2 npm:" \
     BUSTER_PACKAGE_MAP="libicu57:libicu63 libmagickwand-6.q16-3:libmagickwand-6.q16-6 libmagickcore-6.q16-3:libmagickcore-6.q16-6 ssmtp:msmtp" \
+    BULLSEYE_PACKAGE_MAP="libicu57:libicu67 libmagickwand-6.q16-3:libmagickwand-6.q16-6 libmagickcore-6.q16-3:libmagickcore-6.q16-6 ssmtp:msmtp" \
+    BOOKWORM_PACKAGE_MAP="libicu57:libicu72 libmagickwand-6.q16-3:libmagickwand-6.q16-6 libmagickcore-6.q16-3:libmagickcore-6.q16-6 ssmtp:msmtp libldap-2.4-2:libldap-2.5-0" \
     ENABLE_NEWRELIC="false"
 
 # NGINX
@@ -60,7 +62,7 @@ ENV PHP="php" \
     NEWRELIC_PHP_VERSION="php5-8.0.0.204" \
     PHP_EXTENSIONS_STARTUP_ONLY="xdebug APCu imagick redis" \
     PHP_EXTENSIONS_STARTUP_ENABLE="" \
-    PHP_EXTENSIONS="bcmath bz2 gd gmp intl json mbstring opcache dom curl pgsql pdo_pgsql pdo_mysql ldap soap zip xdebug-3.1.5 imagick-3.7.0 redis-5.3.7 APCu" \
+    PHP_EXTENSIONS="bcmath bz2 gd gmp intl json mbstring opcache dom curl pgsql pdo_pgsql pdo_mysql ldap soap zip xdebug imagick-3.7.0 redis-5.3.7 APCu" \
     PHP_BUILD_PACKAGES="re2c libmagickwand-6.q16-dev libbz2-dev libldap2-dev libgmp-dev libicu-dev libpq-dev libpq-dev libreadline6-dev libedit-dev libxml2-dev libcurl4-openssl-dev zlib1g-dev libfreetype6-dev libjpeg62-turbo-dev libpng-dev libzip-dev" \
     SYSTEM_PACKAGES="${SYSTEM_PACKAGES} libldap-2.4-2 libpng16-16 libicu57 libjpeg62-turbo libfreetype6 libmagickwand-6.q16-3 libmagickcore-6.q16-3 libzip4" \
     PHP_INI_DIR="/usr/local/etc/php" \
