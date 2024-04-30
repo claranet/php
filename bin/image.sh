@@ -5,7 +5,7 @@ set -eo pipefail
 WORKDIR=$(realpath $0 | xargs dirname | xargs dirname)
 
 export FROM_IMAGE=${FROM_IMAGE:-php:8.2.18-fpm-bookworm}
-PHP_VERSION=${PHP_VERSION:-8.2.18} # 8.2.18, 8.3.6
+PHP_VERSION=${PHP_VERSION:-8.2.18}
 VERSION=${VERSION:-`cat $WORKDIR/VERSION`}
 IMAGE_NAME=${IMAGE_NAME:-local/claranet/php}
 IMAGE_TAG=${IMAGE_TAG:-$VERSION-php$PHP_VERSION}
@@ -41,6 +41,7 @@ case "$1" in
         build_image ${IMAGE}
         ;;
     test)
+        echo ${IMAGE}
         test_image ${IMAGE}
         ;;
     publish)
