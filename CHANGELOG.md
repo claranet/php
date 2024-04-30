@@ -1,3 +1,13 @@
+# 1.1.59 (2024-04-30)
+
+**UPDATES**
+* Update PHP version to 8.2.18
+* Update PHP version to 8.3.6 but there is a bug with imagick at the moment
+* Make use of Debian "bookworm"
+* Adjust package mapping for bullseye and bookworm
+* Increase Matomo version for test
+
+
 # 1.1.58 (2022-06-29)
 
 **UPDATES**
