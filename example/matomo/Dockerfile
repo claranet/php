@@ -1,5 +1,4 @@
-#FROM ${IMAGE}
-FROM local/claranet/php:1.1.58-php8.2.18
+FROM ${IMAGE}
 
 ENV DOCUMENT_ROOT="${WORKDIR}" \
     COMPRESS_FILE_PATHS="js"
